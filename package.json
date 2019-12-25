@@ -1,5 +1,6 @@
 {
   "name": "contributions",
+  "description": "View the Github contributions of a user",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +9,44 @@
     "start": "next start"
   },
   "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
     "next": "9.1.6",
+    "query-string": "^6.9.0",
     "react": "16.12.0",
     "react-dom": "16.12.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,json,md,mdx,html}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "jsxSingleQuote": false,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "avoid"
+  },
+  "devDependencies": {
+    "canopic": "^0.2.1"
   }
 }
