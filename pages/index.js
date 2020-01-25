@@ -30,7 +30,7 @@ const Home = () => (
 
         <h2 id="label">View the Github contributions of</h2>
 
-        <input name="userName" placeholder="kevin940726" />
+        <input name="userName" placeholder="kevin940726" autoFocus />
       </form>
     </main>
 
