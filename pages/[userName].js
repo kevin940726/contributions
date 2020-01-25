@@ -12,7 +12,7 @@ User.getInitialProps = async ({ query, res }) => {
   ).then(res => res.json());
   const filterOrgs = orgs.map(org => `-user:${org.login}`).join(' ');
 
-  const url = `https://github.com/pulls?${querystring.stringify({
+  const url = `https://github.com/search?${querystring.stringify({
     utf8: '✓',
     q: `is:pr is:closed author:${userName} -user:${userName} sort:updated-desc ${filterOrgs}`,
   })}`;
